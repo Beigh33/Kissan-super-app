@@ -1,0 +1,33 @@
+┌─────────────────────────────────────────────────────────────┐
+│                      Android / iOS OS                       │
+│  - Launcher Icon (192px / 512px / 512px Maskable / 180px)   │
+│  - App Shortcuts (Long-press: Crop Doctor & Mandi Bhav)     │
+└──────────────────────────────┬──────────────────────────────┘
+                               │
+                               ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    Web App Manifest                         │
+│  - id: "/"                                                  │
+│  - display: "standalone"                                    │
+│  - display_override: ["window-controls-overlay", ...]       │
+│  - orientation: "any"                                       │
+│  - theme_color & background_color: "#2E7D32" / "#F4F8F4"    │
+│  - shortcuts: [/?tab=doctor, /?tab=bazaar]                  │
+└──────────────────────────────┬──────────────────────────────┘
+                               │
+                               ▼
+┌─────────────────────────────────────────────────────────────┐
+│                       index.html                            │
+│  - <link rel="manifest" href="/manifest.json">              │
+│  - <meta name="theme-color" content="#2E7D32">              │
+│  - <meta name="apple-mobile-web-app-capable" content="yes"> │
+│  - <link rel="apple-touch-icon" href="/apple-touch-icon..."> │
+│  - Service Worker auto-registration (/sw.js)                │
+└──────────────────────────────┬──────────────────────────────┘
+                               │
+                               ▼
+┌─────────────────────────────────────────────────────────────┐
+│                     React SPA (App.tsx)                     │
+│  - Deep-link listener (?tab=doctor -> activeTab = 'doctor') │
+│  - PWA Install Banner & Diagnostics Modal                   │
+└─────────────────────────────────────────────────────────────┘
